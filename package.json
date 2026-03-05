@@ -12,7 +12,10 @@
     "invoke:text": "serverless invoke local -f getText",
     "invoke:time": "serverless invoke local -f getTime"
   },
+  "dependencies": {
+    "serverless": "^4.33.0"
+  },
   "devDependencies": {
-    "serverless-offline": "^13.0.0"
+    "serverless-offline": "^14.5.0"
   }
 }
