@@ -31,7 +31,7 @@ Sugestões de evolução para este projeto exemplo.
 
 - Adicionar step de testes e lint antes do deploy
 - Adicionar step de **smoke test** após o deploy (chamar os endpoints e validar resposta)
-- Considerar usar **OIDC** ao invés de access keys estáticas para autenticação AWS
+
 
 ## 6. Monitoramento e alertas
 
@@ -43,7 +43,6 @@ Sugestões de evolução para este projeto exemplo.
 
 - Adicionar um **custom domain** (ex: `api.seusite.com`) via Route53 + API Gateway
 - Considerar **WAF** (Web Application Firewall) para proteção em prod
-- Adicionar tags nos recursos para organização e billing
 
 ## 8. Documentação da API
 
