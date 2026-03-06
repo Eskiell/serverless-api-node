@@ -1,5 +1,6 @@
 const { buildResponse } = require('../utils/response');
 const { withObservability } = require('../utils/middleware');
+const { withCache } = require('../utils/cache');
 
 const getText = async () => {
   return buildResponse(200, {
@@ -7,4 +8,6 @@ const getText = async () => {
   });
 };
 
-module.exports = { handler: withObservability('getText', getText) };
+const cachedGetText = withCache('getText', 10, getText);
+
+module.exports = { handler: withObservability('getText', cachedGetText) };

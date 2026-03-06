@@ -1,5 +1,6 @@
 const { buildResponse } = require('../utils/response');
 const { withObservability } = require('../utils/middleware');
+const { withCache } = require('../utils/cache');
 
 const getTime = async () => {
   const now = new Date();
@@ -10,4 +11,6 @@ const getTime = async () => {
   });
 };
 
-module.exports = { handler: withObservability('getTime', getTime) };
+const cachedGetTime = withCache('getTime', 10, getTime);
+
+module.exports = { handler: withObservability('getTime', cachedGetTime) };
